@@ -31,7 +31,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
 
         registry.addInterceptor(loginRequiredInterceptor)
-                .excludePathPatterns("/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
+                .excludePathPatterns("/**/*.css",  "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
     }
 //    @Override
 //    public void addResourceHandlers(ResourceHandlerRegistry registry){
