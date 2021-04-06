@@ -19,8 +19,8 @@
     </select>
 
     <select id="selectByName" resultType="User">
-        select <include refid="selectFields"></include>
-        from user
+        select id, username, password, salt, email, type, status, activation_code, header_url, create_time
+    from user
         where username = #{username}
     </select>
 

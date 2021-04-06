@@ -3,10 +3,12 @@ package cn.cyc.communitys.dao;
 import cn.cyc.communitys.entity.DiscussPost;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Mapper
+@Repository
 public interface DiscussPostMapper {
 
     List<DiscussPost> selectDiscussPosts(@Param("userId")int userId,@Param("offset") int offset,@Param("limit") int limit);

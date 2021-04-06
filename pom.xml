@@ -8,11 +8,11 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.nowcoder.community</groupId>
-	<artifactId>community</artifactId>
+	<groupId>cn.cyc.communitys</groupId>
+	<artifactId>communitys</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>community</name>
-	<description>nowcoder community</description>
+	<name>communitys</name>
+	<description>communitys</description>
 
 	<properties>
 		<java.version>1.8</java.version>

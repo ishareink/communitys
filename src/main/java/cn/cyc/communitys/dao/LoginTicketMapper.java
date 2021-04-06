@@ -7,9 +7,11 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.stereotype.Repository;
 
 
 @Mapper
+@Repository
 @Deprecated
 public interface LoginTicketMapper {
 

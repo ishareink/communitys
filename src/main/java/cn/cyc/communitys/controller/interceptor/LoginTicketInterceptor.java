@@ -23,6 +23,7 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
     @Autowired
     private HostHolder hostHolder;
 
+    //在业务处理器处理请求之前被调用。预处理，可以进行编码、安全控制、权限校验等处理。
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 从cookie中获取凭证
@@ -39,10 +40,10 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
                 hostHolder.setUser(user);
             }
         }
-
         return true;
     }
 
+    //在业务处理器处理请求执行完成后，生成视图之前执行。
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         User user = hostHolder.getUser();
@@ -51,6 +52,7 @@ public class LoginTicketInterceptor implements HandlerInterceptor {
         }
     }
 
+    //在 DispatcherServlet 完全处理完请求后被调用，可用于清理资源等。
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         hostHolder.clear();

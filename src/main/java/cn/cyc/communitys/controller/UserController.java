@@ -56,7 +56,7 @@ public class UserController implements CommunityConstant {
     @LoginRequired
     @RequestMapping(path = "/setting", method = RequestMethod.GET)
     public String getSettingPage() {
-        return "/site/setting";
+        return "site/setting";
     }
 
     @LoginRequired
@@ -64,14 +64,14 @@ public class UserController implements CommunityConstant {
     public String uploadHeader(MultipartFile headerImage, Model model) {
         if (headerImage == null) {
             model.addAttribute("error", "您还没有选择图片!");
-            return "/site/setting";
+            return "site/setting";
         }
 
         String fileName = headerImage.getOriginalFilename();
         String suffix = fileName.substring(fileName.lastIndexOf("."));
         if (StringUtils.isBlank(suffix)) {
             model.addAttribute("error", "文件的格式不正确!");
-            return "/site/setting";
+            return "site/setting";
         }
 
         // 生成随机文件名
@@ -144,7 +144,7 @@ public class UserController implements CommunityConstant {
         }
         model.addAttribute("hasFollowed", hasFollowed);
 
-        return "/site/profile";
+        return "site/profile";
     }
 
 }
